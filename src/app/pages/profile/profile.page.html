@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+
+  <ion-item color="primary">
+    <ion-label>
+      Name: {{name1}}
+    </ion-label>
+  </ion-item>
+    <ion-item color="primary">
+    <ion-label>
+      Age: {{age1}}
+    </ion-label>
+  </ion-item>
+    <ion-item color="primary">
+    <ion-label>
+      Bio: {{bio1}}
+    </ion-label>
+  </ion-item>
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="email" formControlName="name"></ion-input>
+      </ion-item>
+      <app-error-message  [field]="$any(form.get('name'))" error="required" message="name is required"></app-error-message>
+
+      <ion-item>
+        <ion-label position="floating">Age</ion-label>
+        <ion-input type="text" formControlName="age"></ion-input>
+      </ion-item>
+      <app-error-message  [field]="$any(form.get('age'))" error="required" message="age is required"></app-error-message>
+
+      <ion-item>
+        <ion-label position="floating">Bio</ion-label>
+        <ion-input type="text" formControlName="bio"></ion-input>
+      </ion-item>
+      <app-error-message  [field]="$any(form.get('bio'))" error="required" message="bio is required"></app-error-message>
+    </ion-card-content>
+    <ion-button (click)="update()" >Update</ion-button>
+  </ion-card>
+
+</form>
+</ion-content>

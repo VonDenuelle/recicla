@@ -1,15 +1,19 @@
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-export class LoginPageForm{
-    private formBuilder: FormBuilder
-    
+export class LoginPageForm {
+
+    private formBuilder: FormBuilder;
+
     constructor(formBuilder: FormBuilder){
-        this.formBuilder = formBuilder
+        this.formBuilder = formBuilder;
     }
-    createFrom(): FormGroup{
+    
+    createForm() : FormGroup {
         return this.formBuilder.group({
-            email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required]]
+            email: ['', [Validators.required, Validators.email]] ,
+            password: ['', [Validators.required]],         
+            a: ['', [Validators.required]]         
         });
     }
+
 }

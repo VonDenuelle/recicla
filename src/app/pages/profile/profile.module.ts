@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { ProfilePageRoutingModule } from './profile-routing.module';
 
-import { LoginPage } from './login.page';
+import { ProfilePage } from './profile.page';
 import { ErrorMessageComponent } from 'src/app/components/error-message/error-message.component';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ErrorMessageComponent } from 'src/app/components/error-message/error-me
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
+    ProfilePageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [LoginPage, ErrorMessageComponent]
+  declarations: [ProfilePage,ErrorMessageComponent]
 })
-export class LoginPageModule {}
+export class ProfilePageModule {}
