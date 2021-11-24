@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Session } from './services/session.services';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,8 +17,8 @@ import { LoadingComponent } from './components/loading/loading.component';
   entryComponents: [],
   imports: [BrowserModule,
      IonicModule.forRoot(), AppRoutingModule, 
-     ...AppStoreModule, StoreDevtoolsModule.instrument({maxAge:25})],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+     ...AppStoreModule, StoreDevtoolsModule.instrument({maxAge:25}),HttpClientModule],
+  providers: [HttpClient, Session, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

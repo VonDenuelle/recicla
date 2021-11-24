@@ -17,10 +17,16 @@
     </ion-card-header>
     <ion-card-content>
     <ion-item>
-      <ion-label position="floating">Name</ion-label>
-      <ion-input type="text" formControlName="name"></ion-input>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input type="text" formControlName="firstName"></ion-input>
     </ion-item>
-    <app-error-message  [field]="$any(form.get('name'))" error="required" message="name is required"></app-error-message>
+    <app-error-message  [field]="$any(form.get('firstName'))" error="required" message="First Name is required"></app-error-message>
+
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input type="text" formControlName="lastName"></ion-input>
+    </ion-item>
+    <app-error-message  [field]="$any(form.get('lastName'))" error="required" message="Last Name is required"></app-error-message>
 
     <ion-item>
       <ion-label position="floating">Email</ion-label>
@@ -28,79 +34,33 @@
     </ion-item>
     <app-error-message  [field]="$any(form.get('email'))" error="required" message="email is required"></app-error-message>
     <app-error-message  [field]="$any(form.get('email'))" error="email" message="email is invalid"></app-error-message>
+    
+    <ion-item>
+      <ion-label position="floating">Contact Number</ion-label>
+      <ion-input type="email" formControlName="contactNo"></ion-input>
+    </ion-item>
+    <app-error-message  [field]="$any(form.get('contactNo'))" error="required" message="Contact Number is required"></app-error-message>
+
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="email" formControlName="username"></ion-input>
+    </ion-item>
+    <app-error-message  [field]="$any(form.get('username'))" error="required" message="Username is required"></app-error-message>
+
 
     <ion-item>
       <ion-label position="floating">Password</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <app-error-message  [field]="$any(form.get('password'))" error="required" message="password is required"></app-error-message>
+    <app-error-message  [field]="$any(form.get('password'))" error="minlength" message="password is too short"></app-error-message>
 
-    <ion-item>
-      <ion-label position="floating">Confirm Password</ion-label>
-      <ion-input type="password" formControlName="rePassword"></ion-input>
-    </ion-item>
-    <app-error-message  [field]="$any(form.get('rePassword'))" error="required" message="Confirm Password is required"></app-error-message>
-    
-    <ion-item>
-      <ion-label position="floating">Phone Number</ion-label>
-      <ion-input type="tel" formControlName="phone"></ion-input>
-    </ion-item>
-    <app-error-message  [field]="$any(form.get('phone'))" error="required" message="phone is required"></app-error-message>
 
   </ion-card-content>
   </ion-card>
 
   <!-- ADDRESS -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Address Information</ion-card-title>
-    </ion-card-header>
 
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Address</ion-label>
-        <ion-input type="text" formControlName="street"></ion-input>
-      </ion-item>
-    <app-error-message  [field]="$any(form.get('street'))" error="required" message="street is required"></app-error-message>
-
-      <ion-item>
-        <ion-label position="floating">Number</ion-label>
-        <ion-input type="tel" formControlName="number"></ion-input>
-      </ion-item>
-    <app-error-message  [field]="$any(form.get('number'))" error="required" message="number is required"></app-error-message>
-
-      <ion-item>
-        <ion-label position="floating">Neighborhood</ion-label>
-        <ion-input type="text" formControlName="neighborhood"></ion-input>
-      </ion-item>
-    <app-error-message  [field]="$any(form.get('neighborhood'))" error="required" message="neighborhood is required"></app-error-message>
-
-      <ion-item>
-        <ion-label position="floating">Complement</ion-label>
-        <ion-input type="text" formControlName="complement"></ion-input>
-      </ion-item>
-    <app-error-message  [field]="$any(form.get('complement'))" error="required" message="complement is required"></app-error-message>
-
-      <ion-item>
-        <ion-label position="floating">Zip Code</ion-label>
-        <ion-input type="tel" formControlName="zip"></ion-input>
-      </ion-item>
-    <app-error-message  [field]="$any(form.get('zip'))" error="required" message="zip is required"></app-error-message>
-
-      <ion-item>
-        <ion-label position="floating">State</ion-label>
-        <ion-input type="text" formControlName="state"></ion-input>
-      </ion-item>
-    <app-error-message  [field]="$any(form.get('state'))" error="required" message="state is required"></app-error-message>
-
-      <ion-item>
-        <ion-label position="floating">City</ion-label>
-        <ion-input type="text" formControlName="city"></ion-input>
-      </ion-item>
-    <app-error-message  [field]="$any(form.get('city'))" error="required" message="city is required"></app-error-message>
-
-    </ion-card-content>
-  </ion-card>
 
   <ion-button size="full" color="light" (click)="register()">
     Register

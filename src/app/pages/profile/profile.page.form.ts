@@ -11,8 +11,9 @@ export class ProfilePageForm {
     createForm() {
         return  this.form = this.formBuilder.group({
             name: ['', [Validators.required]] ,
-            age: ['', [Validators.required]],         
-            bio: ['', [Validators.required]]         
+            email: ['', [Validators.required,Validators.email]],         
+            cont: ['', [Validators.required]],         
+            usn: ['', [Validators.required]]     
         });
 
     }

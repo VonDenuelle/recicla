@@ -10,21 +10,12 @@ export class RegisterPageForm {
     
     createForm() {
        return this.formBuilder.group({
-            email: ['', [Validators.required, Validators.email]] ,
-            name: ['', [Validators.required]],         
-            password: ['', [Validators.required,Validators.minLength(6)]],         
-            rePassword: ['',[Validators.required]] ,
-            phone: ['', [Validators.required]],         
-
-    
-                street: ['', [Validators.required]],         
-                number: ['', [Validators.required]],         
-                neighborhood: ['', [Validators.required]],         
-                complement: ['', [Validators.required]],         
-                zip: ['', [Validators.required]],         
-                state: ['', [Validators.required]],         
-                city: ['', [Validators.required]]    
-            
+           firstName: ['', [Validators.required]],         
+           lastName: ['', [Validators.required]],         
+           email: ['', [Validators.required, Validators.email]] ,
+            contactNo: ['', [Validators.required]],                 
+            password: ['', [Validators.required,Validators.minLength(4)]] ,
+            username: ['', [Validators.required]],        
                  
         });
     }

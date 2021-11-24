@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Session } from 'src/app/services/session.services';
 import { ProfilePageForm } from './profile.page.form';
 
 @Component({
@@ -11,23 +12,28 @@ import { ProfilePageForm } from './profile.page.form';
 export class ProfilePage implements OnInit {
 
   form: FormGroup
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, public session: Session) { }
 
   ngOnInit() {
     this.form = new ProfilePageForm(this.formBuilder).createForm()
   }
 
-  name1 = "Von Denuelle L. Tandoc"
-  age1 = "20"
-  bio1 = "I am a Gordon College Student"
+  name1 = this.session.firstName + ' ' + this.session.lastName
+  email = this.session.email
+  cont = this.session.contactNo
+  usn = this.session.username
   
+
   update(){
+
     let name = this.form.get('name')
-    let age = this.form.get('age')
-    let bio = this.form.get('bio')
+    let email = this.form.get('email')
+    let cont = this.form.get('cont')
+    let usn = this.form.get('usn')
 
     this.name1 =name.value
-    this.age1 = age.value
-    this.bio1 = bio.value
+    this.email = email.value
+    this.cont = cont.value
+    this.usn = usn.value
   }
 }
